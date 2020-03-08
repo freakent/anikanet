@@ -1,5 +1,5 @@
 #!/bin/sh
-network="$( uci show wireless | grep $1 | cut -d'=' -f1 | cut -d'.' -f2)"
+network="$( uci show wireless | grep \'$1\' | cut -d'=' -f1 | cut -d'.' -f2)"
 if [ -z "$network" ]
 then
   echo "SSID $1 not found."
