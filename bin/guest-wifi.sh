@@ -20,6 +20,11 @@ uci show wireless.guest2g
 uci show wireless.guest5g
 
 uci commit wireless
+
+echo "*************"
+uci show wireless.guest2g
+uci show wireless.guest5g
+
 #wifi reload $network
 wifi reload 
 
