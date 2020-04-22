@@ -18,3 +18,5 @@ echo "export GIT_SSH=\$HOME/.gitssh.sh" >> /etc/profile
 
 # Now use git (finally)
 git clone git@bitbucket.org:<user>/<repo>.git
+
+git --no-pager log --pretty=oneline
