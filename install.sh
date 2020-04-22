@@ -1,5 +1,16 @@
 #!/bin/sh 
 
-git clone git@github.com:freakent/anikanet.git /opt/anikanet
+# Update the list of available openwrt packages
+echo
+echo "Updating openwrt package list"
+opkg -V0 update
 
-git clone git://github.com:freakent/anikanet.git /opt/anikanet
+# Install git if not already installed
+echo
+echo "Checking for presence of git"
+(which git) ||  (opkg install git)
+
+# Clone the anikanet tools into /opt/anikanet
+echo
+echo "Installing into /opt/anikanet"
+git clone git://github.com:/freakent/anikanet.git /opt/anikanet

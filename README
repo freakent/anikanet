@@ -1,6 +1,5 @@
-opkg update
-opkg install ca-certificates libustream-openssl
-wget -O - https://raw.githubusercontent.com/freakent/anikanet/master/setup.sh | /bin/sh
+opkg -V0 update && opkg install ca-certificates libustream-openssl
+wget -O - https://raw.githubusercontent.com/freakent/anikanet/master/install.sh | /bin/sh
 
 
 # Generate your identity key on openwrt

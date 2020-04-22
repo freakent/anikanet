@@ -35,3 +35,6 @@ echo "Checking for presence of git"
 echo
 echo "Clone the anikanet tools into /opt/anikanet"
 git clone git://github.com:/freakent/anikanet.git /opt/anikanet
+
+git clone git@github.com:freakent/anikanet.git /opt/anikanet
+
