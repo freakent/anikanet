@@ -14,7 +14,9 @@ dropbearkey -t rsa -f ~/.ssh/id_rsa
 echo "#!/bin/sh" > ~/.gitssh.sh
 echo "dbclient -y -i ~/.ssh/id_rsa \$\*" >> ~/.gitssh.sh
 chmod +x ~/.gitssh.sh
-echo "export GIT_SSH=\$HOME/.gitssh.sh" >> /etc/profile
+echo "export GIT_SSH=\$HOME/.gitssh.sh" >> ~/.profile
+
+export GIT_SSH=$HOME/.gitssh.sh
 
 # Last step
 # Convert public key from dropbear binary to openssh text
