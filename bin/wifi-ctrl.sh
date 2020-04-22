@@ -5,6 +5,7 @@ then
   echo "SSID $1 not found."
   exit 1
 else
+  echo "set $network ($1) to $2"
   device="$( uci get wireless.$network.device )" 
   case $2 in
     off|Off|OFF|0) uci set wireless.${network}.disabled=1 ;;
