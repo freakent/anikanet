@@ -20,3 +20,5 @@ echo "export GIT_SSH=\$HOME/.gitssh.sh" >> /etc/profile
 git clone git@bitbucket.org:<user>/<repo>.git
 
 git --no-pager log --pretty=oneline
+
+git --no-pager diff HEAD origin/master
