@@ -4,19 +4,25 @@
 opkg update
 
 # Install git if not already installed
+echo
+echo "Checking for presence of git"
 (which git) ||  (opkg install git)
 
 #Generate your identity key on openwrt
+echo 
+echo "Checking for private key"
 mkdir -p ~/.ssh
-dropbearkey -t rsa -f ~/.ssh/id_rsa
+[ -f ~/.ssh/id_rsa ] || dropbearkey -t rsa -f ~/.ssh/id_rsa
 
 # Change git ssh command
+echo
+echo "Configuring git to use busybox keys"
 echo "#!/bin/sh" > ~/.gitssh.sh
 echo "dbclient -y -i ~/.ssh/id_rsa \$\*" >> ~/.gitssh.sh
 chmod +x ~/.gitssh.sh
 echo "export GIT_SSH=\$HOME/.gitssh.sh" >> ~/.profile
 
-export GIT_SSH=$HOME/.gitssh.sh
+echo "export GIT_SSH=$HOME/.gitssh.sh"
 
 # Last step
 # Convert public key from dropbear binary to openssh text
