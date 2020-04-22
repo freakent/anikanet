@@ -4,6 +4,7 @@ echo `date`, $ACTION, $INTERFACE, $DEVICE >> $LOGFILE
 
 case "$INTERFACE" in (wan|wwan|tethering|modem)
     case "$ACTION" in (ifup|ifdown)
+        mwan3 interfaces >> $LOGFILE
         active=$(mwan3 interfaces | grep active | wc -l)
 
         if [ $active -eq 0 ]
