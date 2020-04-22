@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # Update the list of available openwrt packages
+echo
+echo "Updating openwrt package list"
 opkg update
 
 # Install git if not already installed
@@ -18,7 +20,7 @@ mkdir -p ~/.ssh
 echo
 echo "Configuring git to use busybox keys"
 echo "#!/bin/sh" > ~/.gitssh.sh
-echo "dbclient -y -i ~/.ssh/id_rsa \$\*" >> ~/.gitssh.sh
+echo "dbclient -y -i ~/.ssh/id_rsa \$*" >> ~/.gitssh.sh
 chmod +x ~/.gitssh.sh
 echo "export GIT_SSH=\$HOME/.gitssh.sh" >> ~/.profile
 
