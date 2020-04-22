@@ -22,3 +22,5 @@ git clone git@bitbucket.org:<user>/<repo>.git
 git --no-pager log --pretty=oneline
 
 git --no-pager diff HEAD origin/master
+
+git --no-pager whatchanged origin/master -n 1
