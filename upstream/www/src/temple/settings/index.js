@@ -115,9 +115,6 @@ define(["text!temple/settings/index.html", "css!temple/settings/index.css", "vue
             checkType: function checkType() {
                 var _this = this;
                 switch (_this.parstatus) {
-                    case 'yachtnet':
-                        _this.openSetting();
-                        break;
                     case 'wg':
                         _this.$store.dispatch("call", {
                             api: "wgclist"
