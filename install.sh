@@ -13,4 +13,4 @@ echo "Checking for presence of git"
 # Clone the anikanet tools into /opt/anikanet
 echo
 echo "Installing into /opt/anikanet"
-git clone --depth=1 git://github.com:/freakent/anikanet.git /opt/anikanet
+git clone --depth=1 ssh://git@github.com:/freakent/anikanet.git /opt/anikanet
